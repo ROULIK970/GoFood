@@ -6,7 +6,7 @@ export default function MyOrder() {
   const [orderData, setorderData] = useState({});
 
   const fetchMyOrder = async () => {
-    await fetch("http://localhost:3000/api/myOrderData", {
+    await fetch("https://go-food-api-ten.vercel.app/api/myOrderData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: "POST",
