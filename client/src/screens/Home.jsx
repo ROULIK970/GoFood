@@ -10,7 +10,7 @@ const Home = () => {
 
   const loadData = async () => {
     let response = await fetch(
-      "http://localhost:3000/api/fooddata",
+      "https://go-food-api-ten.vercel.app/api/fooddata",
       {
         method: "GET",
         headers: {
