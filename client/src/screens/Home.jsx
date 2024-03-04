@@ -19,8 +19,8 @@ const Home = () => {
       }
     );
     response = await response.json();
-     setFoodItem(data[1] || []);
-     setFoodCat(data[0] || []);
+    setFoodItem(response[1] || []);
+    setFoodCat(response[0] || []);
   };
 
   useEffect(() => {
