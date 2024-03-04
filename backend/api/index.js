@@ -9,7 +9,10 @@ app.use(cors());
 
 app.use((req, res, next) => {
   //change this header back to what you had for your frontend url
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://go-food-mern-three.vercel.app"
+  );
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
