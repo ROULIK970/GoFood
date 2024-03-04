@@ -111,7 +111,7 @@ const Home = () => {
         </div>
       </div>
       <div className="container ">
-        {foodCat !== [] &&
+        {foodCat.length &&
           foodCat.map((data) => {
             return (
               <div
