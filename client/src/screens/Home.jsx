@@ -111,7 +111,7 @@ const Home = () => {
         </div>
       </div>
       <div className="container ">
-        {foodCat !== [] ? (
+        {foodCat ? (
           foodCat.map((data) => (
             <div
               key={data._id}
@@ -123,7 +123,7 @@ const Home = () => {
                 <div className="fs-3 m-3 text-center">{data.CategoryName}</div>
               )}
               <hr />
-              {foodItem !== [] &&
+              {foodItem &&
                 foodItem
                   .filter((item) => {
                     return (
