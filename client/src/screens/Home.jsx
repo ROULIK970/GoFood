@@ -123,7 +123,7 @@ const Home = () => {
                 <div className="fs-3 m-3 text-center">{data.CategoryName}</div>
               )}
               <hr />
-              {foodItem.length &&
+              {foodItem !== [] &&
                 foodItem
                   .filter((item) => {
                     return (
