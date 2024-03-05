@@ -111,44 +111,42 @@ const Home = () => {
         </div>
       </div>
       <div className="container ">
-        {foodCat.length &&
-          foodCat.map((data) => {
-            return (
-              <div
-                key={data._id}
-                className="row mb-3 gap-3 justify-content-center"
-              >
-                {data.CategoryName.toLowerCase().includes(
-                  search.toLowerCase()
-                ) && (
-                  <div className="fs-3 m-3 text-center">
-                    {data.CategoryName}
-                  </div>
-                )}
-                <hr />
-                {foodItem.length &&
-                  foodItem
-                    .filter((item) => {
-                      return (
-                        item.CategoryName === data.CategoryName &&
-                        item.name
-                          .toLowerCase()
-                          .includes(search.toLocaleLowerCase())
-                      );
-                    })
-                    .map((filteredItems) => {
-                      return (
-                        <div
-                          key={filteredItems._id}
-                          className="col-12 col-md-6 col-lg-3 p-5 "
-                        >
-                          <Card foodItems={filteredItems} />
-                        </div>
-                      );
-                    })}
-              </div>
-            );
-          })}
+        {foodCat.length > 0 ? (
+          foodCat.map((data) => (
+            <div
+              key={data._id}
+              className="row mb-3 gap-3 justify-content-center"
+            >
+              {data.CategoryName.toLowerCase().includes(
+                search.toLowerCase()
+              ) && (
+                <div className="fs-3 m-3 text-center">{data.CategoryName}</div>
+              )}
+              <hr />
+              {foodItem.length > 0 &&
+                foodItem
+                  .filter((item) => {
+                    return (
+                      item.CategoryName === data.CategoryName &&
+                      item.name
+                        .toLowerCase()
+                        .includes(search.toLocaleLowerCase())
+                    );
+                  })
+                  .map((filteredItems) => (
+                    <div
+                      key={filteredItems._id}
+                      className="col-12 col-md-6 col-lg-3 p-5 "
+                    >
+                      <Card foodItems={filteredItems} />
+                    </div>
+                  ))}
+            </div>
+          ))
+        ) : (
+          // Optional: You can render a loading indicator or a message here
+          <div>Loading...</div>
+        )}
       </div>
       <div>
         <Footer />
