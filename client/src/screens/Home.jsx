@@ -128,9 +128,9 @@ const Home = () => {
                   .filter((item) => {
                     return (
                       item.CategoryName === data.CategoryName &&
-                      item.name
-                        .toLowerCase()
-                        .includes(search.toLocaleLowerCase())
+                      item.CategoryName.toLowerCase().includes(
+                        search.toLocaleLowerCase()
+                      )
                     );
                   })
                   .map((filteredItems) => (
