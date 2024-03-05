@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import Card from "../components/Card";
 
 const Home = () => {
-  const [foodCat, setFoodCat] = useState();
-  const [foodItem, setFoodItem] = useState();
+  const [foodCat, setFoodCat] = useState([]);
+  const [foodItem, setFoodItem] = useState([]);
   const [search, setSearch] = useState("");
 
   const loadData = async () => {
